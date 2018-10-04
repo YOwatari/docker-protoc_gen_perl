@@ -1,12 +1,3 @@
-# docker-protoc_gen_perl
-protoc for perl
-
-## Example usage
-
-```
-$ mkdir -p lib
-$ docker run --rm -v $(pwd):/tmp -w /tmp yowatari/protoc_gen_perl --perl-gpd_out=package=Humans.Person:lib person.proto
-$ cat lib/Humans/Person.pm
 package Humans::Person;
 
 use strict;
@@ -25,12 +16,11 @@ EOD
 
 $gpd->map(
     {
-          'package' => 'humans',
-                'prefix' => 'Humans::Person::Humans'
-                    },
-                    );
+      'package' => 'humans',
+      'prefix' => 'Humans::Person::Humans'
+    },
+);
 
 undef $gpd;
 
 1;
-```
